@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 6,
+      length: 8,
       child: Scaffold(
         drawer: const Drawer(),
         body: NestedScrollView(
@@ -24,22 +24,28 @@ class HomePage extends StatelessWidget {
             physics: BouncingScrollPhysics(),
             children: <Widget>[
               NewsFeed(
-               
+                categoryName: '',
               ),
               NewsFeed(
-                
+                categoryName: 'business',
               ),
-              Center(
-                child: Icon(Icons.directions_bike),
+              NewsFeed(
+                categoryName: 'entertainment',
               ),
-              Center(
-                child: Icon(Icons.directions_car),
+              NewsFeed(
+                categoryName: 'general',
               ),
-              Center(
-                child: Icon(Icons.directions_transit),
+              NewsFeed(
+                categoryName: 'health',
               ),
-              Center(
-                child: Icon(Icons.directions_bike),
+              NewsFeed(
+                categoryName: 'science',
+              ),
+              NewsFeed(
+                categoryName: 'sports',
+              ),
+              NewsFeed(
+                categoryName: 'technology',
               ),
             ],
           ),

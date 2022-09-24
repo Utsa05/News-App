@@ -1,4 +1,4 @@
-// ignore_for_file: depend_on_referenced_packages, unused_import
+// ignore_for_file: depend_on_referenced_packages, unused_import, avoid_print
 
 import 'dart:math';
 
@@ -27,7 +27,6 @@ class NewsCubit extends Cubit<NewsState> {
     final moviesEither = await getNewsUsecase.call(NoParms());
 
     emit(moviesEither.fold((error) => NewsError(error.appErrorType), (news) {
-      print('hi rom news');
       return NewsLoaded(news: news);
     }));
     print('Loaded News');
@@ -40,7 +39,7 @@ class NewsCubit extends Cubit<NewsState> {
 
     emit(moviesEither.fold((error) => NewsError(error.appErrorType), (news) {
       print("Hi from Category");
-      
+
       return NewsbyCategoryLoaded(news: news);
     }));
 

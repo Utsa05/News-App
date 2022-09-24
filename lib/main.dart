@@ -3,7 +3,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import 'package:news_zone/domain/enteties/app_error.dart';
 import 'package:news_zone/domain/enteties/new_params.dart';
@@ -19,7 +18,7 @@ void main() async {
   unawaited(getit.init());
   WidgetsFlutterBinding.ensureInitialized();
 
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitDown]);
+  //SystemChrome.setPreferredOrientations([DeviceOrientation.portraitDown]);
 
   // ApiClient client = ApiClient(client: Client());
   // NewsRemoteDatasource datasource = NewsRemoteDatasourceImpl(apiClient: client);
@@ -35,15 +34,15 @@ void main() async {
   //   print(news);
   // });
 
-  GetNewsbyCategory getNewsUsecase = getit.getInstance<GetNewsbyCategory>();
+  // GetNewsbyCategory getNewsUsecase = getit.getInstance<GetNewsbyCategory>();
 
-  final Either<AppError, List<NewsEntity>> eitherResponse =
-      await getNewsUsecase(const NewsParm('Apple'));
-  eitherResponse.fold((l) {
-    print(l);
-  }, (news) {
-    print(news);
-  });
+  // final Either<AppError, List<NewsEntity>> eitherResponse =
+  //     await getNewsUsecase(const NewsParm('Apple'));
+  // eitherResponse.fold((l) {
+  //   print(l);
+  // }, (news) {
+  //   print(news);
+  // });
 
   runApp(const NewsApp());
 }

@@ -72,16 +72,22 @@ class CustomAppBar extends StatelessWidget {
                 text: "Business",
               ),
               Tab(
-                text: "Economics",
+                text: "Entertainment",
               ),
               Tab(
-                text: "Inocme",
+                text: "General",
               ),
               Tab(
-                text: "World",
+                text: "Health",
               ),
               Tab(
-                text: "Transport",
+                text: "Science",
+              ),
+              Tab(
+                text: "Sports",
+              ),
+              Tab(
+                text: "Techhnology",
               ),
             ],
           ),

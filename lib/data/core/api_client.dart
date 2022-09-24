@@ -11,7 +11,7 @@ class ApiClient {
   ApiClient({required this.client});
 
   dynamic get(String path) async {
-    final resposne = await http.get(Uri.parse("${ApiConstants.baseURL}$path"),
+    final resposne = await client.get(Uri.parse("${ApiConstants.baseURL}$path"),
         headers: {"Content-Type": "application/json"});
 
     //print(resposne.body);

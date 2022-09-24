@@ -16,7 +16,7 @@ class NewsRemoteDatasourceImpl implements NewsRemoteDatasource {
   @override
   Future<List<NewsModel>> getNews() async {
     final response = await apiClient
-        .get("top-headlines?category=business&apiKey=${ApiConstants.apiKey}");
+        .get("top-headlines?country=us&apiKey=${ApiConstants.apiKey}");
     final news = NewResultModel.fromJson(response).news;
     return news!;
   }
@@ -32,7 +32,7 @@ class NewsRemoteDatasourceImpl implements NewsRemoteDatasource {
   @override
   Future<List<NewsModel>> getNewsbyCategory(String categoryName) async {
     final response = await apiClient.get(
-        "everything?q=$categoryName&from=2022-08-13&sortBy=popularity&apiKey=${ApiConstants.apiKey}");
+        "top-headlines?category=$categoryName&apiKey=${ApiConstants.apiKey}");
     final news = NewResultModel.fromJson(response).news;
     return news!;
   }
